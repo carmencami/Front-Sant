@@ -1,0 +1,87 @@
+// .container {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//   }
+  
+//   .filter--container {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     justify-items: start;
+//     align-items: end;
+//   }
+  
+//   .filters {
+//       justify-self: start;
+//       width: 25%;
+//   }
+  
+//   .search {
+//       justify-self: center;
+//       width: 40%;
+//   }
+  
+//   .mat-elevation-z8 {
+//     box-shadow: none;
+//   }
+  
+//   .button-filters {
+//       display: none;
+//   }
+  
+//   .mat-header-cell {
+//     font-weight: 600;
+//     color: #352E5B;
+//   }
+  
+//   table {
+//     width: 100%;
+//     background-color: #F8F7FF;
+//     border-radius: 8px;
+//     overflow: hidden !important;
+//   }
+  
+//   th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+//     padding: 0;
+//     border-bottom-width: 1px;
+//   }
+  
+//   th {background-color: #F8F7FF;}
+//   tr:nth-child(even) {background: #F8F7FF}
+//   tr:nth-child(odd) {background: #FFF}
+  
+//   .img--container, a {
+//     height: 100%;
+//     display: flex;
+//     align-content: center;
+//   }
+  
+//   .img--cryptos {
+//     height: 30px;
+//     width: 30px;
+//   }
+  
+//   .column--icon, .column-asset {
+//     width: 10%;
+//   }
+  
+//   .column--crypto, .column--value, .column--stock, .column--buysell {
+//     width: 20%;
+//   }
+  
+//   .button--buy, .button--sell {
+//     color: #00ff3c;
+//     background-color: transparent;
+//     margin-right: 1%;
+//     &:hover {
+//       transition: all 0.5s ease-in-out;
+//       transform: scale(1.1);
+//     }
+//     &:not(:hover) {
+//       transition: all 0.5s ease-in-out;
+//       transform: scale(1);
+//     }
+//   }
+  
+//   .button--sell {
+//     color: #E83E46;
+//   }

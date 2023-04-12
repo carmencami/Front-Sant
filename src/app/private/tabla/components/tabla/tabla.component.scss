@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .filter--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: end;
+  }
+
+
+  .img--cryptos{
+    width: 20px;
+    height: 20px;
+  }
+  
+  .filters {
+      justify-self: start;
+      width: 25%;
+  }
+  
+  .search {
+      justify-self: center;
+      width: 40%;
+  }
+
+  

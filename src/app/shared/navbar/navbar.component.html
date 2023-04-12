@@ -1,0 +1,15 @@
+<div class="container">
+    <a href="#"
+    routerLink="/"
+    routerLinkActive="active"
+    class="list--button-container">
+    <div class="logo logo--container">
+        <img class="cryptoimagen" src="../../../assets/cryptoimagen.png" alt="" />
+    </div>
+    </a>
+    <div class="button button--container">
+      <button *ngIf="!login" class="button button--login" mat-button (click)="openLogin()">Login</button>
+      <button *ngIf="!login" class="button button--register" mat-button (click)="openRegister()">Regístrate</button>
+      <!-- <button *ngIf="login" class="button button--register" mat-button (click)="logout()"><mat-icon>exit_to_app</mat-icon></button> -->
+    </div>
+</div>

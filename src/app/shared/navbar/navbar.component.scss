@@ -1,0 +1,49 @@
+.container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 10vh;
+    grid-template-columns: 2fr 10fr;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+// .button--container {
+//     display: grid;
+//     justify-self: end;
+//     grid-template-columns: 1fr 1fr 1fr;
+// }
+
+.logo--container {
+    justify-self: end;
+}
+
+.cryptoimagen {
+    width: 80%;
+    height: 80%;
+}
+.cryptoimagen:hover {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
+}
+.cryptoimagen:not(:hover) {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+}
+
+
+
+
+.button--login {
+    font-size: larger;
+    color:#E52727;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .cryptoimagen {
+    display: none;
+    }
+
+  }/*# sourceMappingURL=navbar.component.css.map */
