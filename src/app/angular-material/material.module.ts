@@ -83,7 +83,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatNativeDateModule,
     MatPaginatorModule,
     MatTableModule,
-    MatProgressSpinnerModule
   
 ],
 })
