@@ -9,11 +9,6 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-// .button--container {
-//     display: grid;
-//     justify-self: end;
-//     grid-template-columns: 1fr 1fr 1fr;
-// }
 
 .logo--container {
     justify-self: end;
@@ -33,13 +28,21 @@
 }
 
 
-
-
-.button--login {
+.button {
     font-size: larger;
-    color:#E52727;
+    color:#737373;
     margin-bottom: 50px;
 }
+::ng-deep .mat-sort-header-content {
+
+margin-left: 76px;
+text-align: left;
+align-items: center;
+font-weight: 500;
+font-size: 21px;
+    
+    }
+
 
 @media (max-width: 768px) {
     .cryptoimagen {

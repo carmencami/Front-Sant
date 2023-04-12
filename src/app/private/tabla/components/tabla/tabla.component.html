@@ -1,4 +1,4 @@
-<div class="container tabla-body">
+<div class="container  main-body">
   <div class="container filter--container">
     <mat-form-field class="filters">
       <mat-label class="mat-caption">Filters</mat-label>
@@ -32,7 +32,7 @@
       />
     </mat-form-field>
   </div>
-
+<div>
   <div class="container table--container">
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="mat-body-1">
@@ -127,6 +127,7 @@
           </td>
         </tr>
       </table>
+      </div>
 
       <mat-paginator
         [pageSizeOptions]="[5, 10, 20]"
