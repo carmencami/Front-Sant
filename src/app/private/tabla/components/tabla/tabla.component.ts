@@ -61,6 +61,7 @@ export class TablaComponent implements OnInit {
     }
   }
 
+
   handleError(error: any) {
     if (error.status === 500) {
     }

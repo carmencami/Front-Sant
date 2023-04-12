@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -51,7 +52,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSidenavModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -81,6 +83,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatPaginatorModule,
     MatTableModule,
+    MatProgressSpinnerModule
+  
 ],
 })
 export class MaterialModule {}
