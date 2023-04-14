@@ -1,13 +1,7 @@
-import { LoginComponent } from 'src/app/public/components/login/login.component';
-
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { RegisterService } from 'src/app/public/user/services/register.service';
-
-
-import { HttpClientModule } from '@angular/common/http';
-
-import { FormControl, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RegisterService } from '../../services/register.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,57 +9,94 @@ selector: 'app-register',
 templateUrl: './register.component.html',
 styleUrls: ['./register.component.scss']
 })
-
 export class RegisterComponent implements OnInit {
-email : FormControl;
-password : FormControl;
-name : FormControl;
-hide = true;
+public formGroup!: FormGroup;
+showError: boolean = false;
+@Output() eventEmitter = new EventEmitter<boolean>()
+@Output() emitterSpinner = new EventEmitter<boolean>()
 
-constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<RegisterComponent>,  private registerService : RegisterService) { 
+showPass: boolean = false
 
-    this.email = new FormControl('', [Validators.required, Validators.email]);
-    this.password = new FormControl('', [Validators.required]);
-    this.name = new FormControl('', [Validators.required]);
+constructor(
+    private formBuilder: FormBuilder,
+    private registerService: RegisterService,
+    private router: Router) { }
+
+
+ngOnInit(): void {
+    this.buildForm()
 }
 
-register(){
-    console.log(this.name.value + ", " + this.email.value + ', ' + this.password.value);
+private buildForm(){
+    const minInputLength = 4;
+    
+    this.formGroup = this.formBuilder.group({
+    username: ['', [Validators.required, Validators.minLength(minInputLength)]],
+    password: ['', [Validators.required, Validators.minLength(minInputLength)]],
+    fullname: ['', [Validators.required, Validators.minLength(minInputLength)]],
+    email: ['', [Validators.required, Validators.email]],
+    });
+}
+
+public getError(controlName: string): string {
+    let error = '';
+    const control = this.formGroup.get(controlName);
+    if (!!control) {
+    if (control.touched && control.errors != null && control.value != '') {
+        if (controlName == 'email') {
+        error = 'Please, insert a valid email adress'
+        }else{
+        error = 'Please, field must contain 4 or more characters';
+        }
+    }
+    }    
+    return error;
+}
+
+addUser() {
+    const user = this.formGroup.value;
+    console.log(user);
     this.registerService
-    .addUser(this.name.value, this.email.value, this.password.value)
+    .addUser(user.username, user.password, user.email)
     .subscribe(
         (data) => {
-            console.log("Usuario creado: " + data)
+        console.log("User registered")
+        console.log(data)
+        if (!!data) {
+            console.log("Registered Succesfully")
+        this.showError = true;
+            this.emitterSpinner.emit(true)
+            console.log("Before timeout")
+            setTimeout(this.registeredToLogin, 1500, this.eventEmitter, this.emitterSpinner, this.router);    
+        }else{
+            this.showError = true;
+            console.log("User already exists")
+        }
         },
-        (error: any) => {
-        this.handleError(error);
+        (err) => {
+        this.handleError(err);
         }
     );
 }
 
 handleError(error: any) {
     if (error.status === 500) {
-      //  Show error message
-    
+    console.log(error)
     }
 }
 
-ngOnInit(): void {
-}
-getErrorEmail() {
-    if (this.email.hasError('required')) {
-    return 'Introduzca su email';
-    }
-
-    return this.email.hasError('email') ? 'No es válido el email' : '';
-}
-getErrorMessage() {
-    if (this.name.hasError('required')) {
-    return 'Introduzca su nombre';
-    }
-
-    return this.email.hasError('name') ? 'No es válido el nombre' : '';
+navigateToLogin(){
+    this.eventEmitter.emit(true)
 }
 
+showPassword(){
+    this.showPass = !this.showPass
+}
+
+registeredToLogin(emitter : EventEmitter<boolean>, emitterSpinner: EventEmitter<boolean>, router: Router){
+    emitter.emit(true)
+    emitterSpinner.emit(false)
+    router.navigate(['/'])
+}
 
 }

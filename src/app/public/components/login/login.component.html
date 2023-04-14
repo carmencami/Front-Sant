@@ -1,29 +1,32 @@
-<div class="container card-login"> 
-	<div class="panel-body">
-        <h2 class="title">
-            CryptoWallet
-        </h2>
-		<div class="container">
-			<mat-form-field appearance="fill">
-                <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-            
-		</div>
-        <div>
-            <div class="example-container">
-                <mat-form-field appearance="fill">
-                <mat-label>Enter your password</mat-label>
-                <input [formControl]="password"  matInput [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-                </mat-form-field>
-        </div>
-        <h2 *ngIf="errorMsg">{{errorMsg}}</h2>
-        <mat-card-actions (click)="login()" class="button-singin">
-        
-        <button (click)="login()" mat-button >Login</button>
-
-
+<div class="login login--background">
+    <h1 class="login--title">My CryptoWallet</h1>
+    <mat-card class="login login--card">        
+        <form [formGroup]="formGroup" class="login login--form" method="post">
+            <div class="title-container">
+                <h1 class="login--card-title">Welcome</h1>
+                <h3 class="login--card-title">Log in to your account</h3>
+            </div>  
+            <input class="login--input"
+                name="email"
+                formControlName="email"
+                type="text"
+                placeholder="Username" />
+            <input class="login--input"
+                name="password"
+                formControlName="password"
+                type="password"
+                placeholder="Password" />
+                <div class="error-message" *ngIf="showError">
+                    Email or password incorrect
+                </div>
+            <button class="login--button"
+                type="submit" 
+                (click)="login()"
+                [disabled]="formGroup.invalid">LOGIN</button>
+            <button class="login--link" (click)="navigateToRegister()">Don't you have an account?</button>
+            <div class="error-message" *ngIf="showError">
+                Email or password incorrect
+            </div>
+        </form>
+    </mat-card>
+</div>

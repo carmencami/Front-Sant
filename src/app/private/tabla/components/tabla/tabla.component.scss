@@ -1,37 +1,37 @@
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+// .container {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//   }
   
-  .filter--container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: start;
-    align-items: end;
-  }
+//   .filter--container {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     justify-items: start;
+//     align-items: end;
+//   }
 
   
-  .main-body {
-  text-align: center; 
-  margin: 0 auto;
-  padding-top: 80px;
-  max-width: 60%;
-  }
+//   .main-body {
+//   text-align: center; 
+//   margin: 0 auto;
+//   padding-top: 80px;
+//   max-width: 60%;
+//   }
 
 
-  .img--cryptos{
-    width: 20px;
-    height: 20px;
-  }
+//   .img--cryptos{
+//     width: 20px;
+//     height: 20px;
+//   }
   
-  .filters {
-      justify-self: start;
-      width: 25%;
-  }
+//   .filters {
+//       justify-self: start;
+//       width: 25%;
+//   }
   
-  .search {
-      justify-self: center;
-      width: 40%;
-  }
+//   .search {
+//       justify-self: center;
+//       width: 40%;
+//   }
 
   

@@ -1,39 +1,58 @@
-<div class="modal-register">
-<div class="register-card">
-    <div>
-    <h2 class="title-register">Registro</h2>
-    </div>
-    <div>
-        <div class="email-container">
-            <mat-form-field appearance="fill">
-            <mat-label>Introduzca su nombre</mat-label>
-            <input matInput placeholder="María" [formControl]="name" required>
-              <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-        </div>
-        <div class="email-container">
-            <mat-form-field appearance="fill">
-            <mat-label>Introduzca su email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorEmail()}}</mat-error>
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="pass-container">
-        <mat-form-field appearance="fill">
-        <mat-label>Introduzca su contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-        </mat-form-field>
-    </div>
-    </div>
-    <mat-card-actions (click)="register()" class="button-register">
-    <div class="container-buttton">
-        <button mat-raised-button color="accent"><p class="button-register">Registrar</p></button>
-    </div>
-    </mat-card-actions>
-    <h4 class="text-link">¿Ya eres miembr@?</h4>
+<div class="register register--background">
+    <h1 class="register--title">My CryptoWallet</h1>
+    <mat-card class="register register--card">        
+        <form [formGroup]="formGroup" class="register register--form" method="post">
+            <div class="title-container">
+                <h1 class="register--card-title">Welcome</h1>
+                <h3 class="register--card-title">Please enter your personal info</h3>
+            </div>                  
+            <!-- USERNAME Imput -->
+            <input class="register--input"
+                name="username"
+                formControlName="username"
+                type="text"
+                placeholder="Username" />
+            <span class="error error-username">{{getError('username')}}</span>
+                    
+            <!-- PASSWORD Imput -->
+            <div class="register--pass-container">
+                <input class="register--input register--input-pass"
+                    name="password"
+                    formControlName="password"
+                    type="password"
+                    placeholder="Password" 
+                    [type]="showPass ? 'text' : 'password'" 
+                    />
+                <span class="error error-password">{{getError('password')}}</span>
+                <button class="register--pass-button" 
+                        (mousedown)="showPassword()"
+                        (mouseup)="showPassword()">
+                    <img src="{{showPass ? '/assets/images/view.png' : '/assets/images/hidden.png'}}" alt="">
+                </button>
+            </div>
 
+            <!-- FULLNAME Imput -->
+            <input class="register--input"
+                    name="name"
+                    formControlName="name"
+                    type="text"
+                    placeholder="name" />
+            <span class="error error-name">{{getError('fullname')}}</span>
+        
+            <!-- EMAIL Imput -->
+            <input class="register--input"
+                name="email"
+                formControlName="email"
+                type="email"
+                placeholder="Email" />
+            <span class="error error-ema">{{getError('email')}}</span>
+            
+            <!-- SUBMIT Imput -->
+            <button type="submit" 
+                class="register--button"
+                (click)="addUser()"
+                [disabled]="formGroup.invalid">SIGN UP</button>
+            <button class="register--link" (click)="navigateToLogin()">Already have an account?</button>
+        </form>
+    </mat-card>
 </div>

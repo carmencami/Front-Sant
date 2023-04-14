@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
-import { PaginainicioComponent } from './pages/paginainicio/paginainicio.component';
+import { PaginainicioComponent } from './public/pages/paginainicio/paginainicio.component';
 
 
 

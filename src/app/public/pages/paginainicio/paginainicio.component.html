@@ -1,0 +1,15 @@
+<div class="page-container"></div>
+
+<app-login *ngIf="showLogin" 
+            class="child-component" 
+            (emitterLogin)="navigateToRegister($event)"
+            (emitterSpinner)="navigateToDashboard($event)">
+</app-login>
+
+<app-register *ngIf="!showLogin" 
+            class="child-component"
+            (eventEmitter)="navigateToLogin($event)"
+            (emitterSpinner)="navigateToDashboard($event)">
+</app-register>
+
+<div *ngIf="showSpinner" class="spinner"></div>

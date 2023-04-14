@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginainicioComponent implements OnInit {
 
+  showLogin : boolean = true
+  showSpinner : boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  navigateToRegister(event: boolean){
+    this.showLogin = event
+  }
+  navigateToLogin(event: boolean){
+    this.showLogin = event
+  }
+  navigateToDashboard(event: boolean){
+    this.showSpinner = event
+  }
 }

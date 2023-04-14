@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PaginainicioComponent } from './pages/paginainicio/paginainicio.component';
+import { PaginainicioComponent } from './public/pages/paginainicio/paginainicio.component';
 
 
 const routes: Routes = [

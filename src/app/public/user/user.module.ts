@@ -6,7 +6,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from '../components/login/login.component';
 import { MaterialModule } from '../../angular-material/material.module';
 import { RegisterComponent } from '../components/register/register.component';
-import { MatDialogRef } from '@angular/material/dialog';
+
 
 
 @NgModule({

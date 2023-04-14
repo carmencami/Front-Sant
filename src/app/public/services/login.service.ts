@@ -11,12 +11,11 @@ export class LoginService{
     private loginUrl:string = "http://localhost:8532/api/users/login"
     constructor(private http:HttpClient){}
 
-    getUserbyEmailAndPassword(email : string, password : string) : Observable<UserInterface>{
+    login(email : string, password : string) : Observable<UserInterface>{
         const body = {
             email : email,
             password : password
         }
-        // TO-DO: tratar el error 500
         return this.http.post<UserInterface>(this.loginUrl, body);
     }
 
