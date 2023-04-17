@@ -3,7 +3,7 @@
     <mat-card class="login login--card">        
         <form [formGroup]="formGroup" class="login login--form" method="post">
             <div class="title-container">
-                <h1 class="login--card-title">Bienvenido a CryptoWallet</h1>
+                <h1 class="login--card-title">Bienvenido</h1>
                 <h3 class="login--card-title">Entra en tu cuenta</h3>
             </div>  
             <input class="login--input"
@@ -15,7 +15,7 @@
                 name="password"
                 formControlName="password"
                 type="password"
-                placeholder="Password" />
+                placeholder="Contraseña" />
                 <div class="error-message" *ngIf="showError">
                     Email o contraseña incorrecta
                 </div>

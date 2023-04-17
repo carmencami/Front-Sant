@@ -3,15 +3,15 @@
     <mat-card class="register register--card">        
         <form [formGroup]="formGroup" class="register register--form" method="post">
             <div class="title-container">
-                <h1 class="register--card-title">Welcome</h1>
-                <h3 class="register--card-title">Please enter your personal info</h3>
+                <h1 class="register--card-title">Bienvenido</h1>
+                <h3 class="register--card-title">Introduzca la información</h3>
             </div>                  
             <!-- USERNAME Imput -->
             <input class="register--input"
                 name="username"
                 formControlName="username"
                 type="text"
-                placeholder="Username" />
+                placeholder="Nombre" />
             <span class="error error-username">{{getError('username')}}</span>
                     
             <!-- PASSWORD Imput -->
@@ -20,7 +20,7 @@
                     name="password"
                     formControlName="password"
                     type="password"
-                    placeholder="Password" 
+                    placeholder="Contraseña" 
                     [type]="showPass ? 'text' : 'password'" 
                     />
                 <span class="error error-password">{{getError('password')}}</span>
@@ -41,8 +41,8 @@
             <button type="submit" 
                 class="register--button"
                 (click)="addUser()"
-                [disabled]="formGroup.invalid">SIGN UP</button>
-            <button class="register--link" (click)="navigateToLogin()">Already have an account?</button>
+                [disabled]="formGroup.invalid">ACEPTAR</button>
+            <button class="register--link" (click)="navigateToLogin()">¿Ya estás registrado?</button>
         </form>
     </mat-card>
 </div>
