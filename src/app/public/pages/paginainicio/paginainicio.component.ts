@@ -21,7 +21,7 @@ export class PaginainicioComponent implements OnInit {
   navigateToLogin(event: boolean){
     this.showLogin = event
   }
-  navigateToDashboard(event: boolean){
+  navigateToTabla(event: boolean){
     this.showSpinner = event
   }
 }

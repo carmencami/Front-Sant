@@ -1,8 +1,7 @@
-import { LoginComponent } from 'src/app/public/components/login/login.component';
+import { UsersService } from 'src/app/public/services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { RegisterComponent } from 'src/app/public/components/register/register.component';
 
 @Component({
 selector: 'app-navbar',
@@ -10,32 +9,44 @@ templateUrl: './navbar.component.html',
 styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  //Variable provisional hasta comprobación de logueo
-login: boolean = false;
-user: string | null = sessionStorage.getItem('user');
+user_id:any
+fullname:string = ""
+deposit:number = 0
+formatedDeposit:any
 
-constructor(public dialog: MatDialog, public router: Router) {}
 
-ngOnInit(): void {}
+constructor(public dialog: MatDialog, public router: Router,  private usersService:UsersService) {}
 
-openLogin() {
-    this.dialog
-    .open(LoginComponent)
-    .afterClosed()
-    .subscribe((res) => {
-        if ( res===true && this.user != null) {
-        this.login = true;
+ngOnInit(): void {
+    this.user_id = sessionStorage.getItem('user_id')
+    
+    this.usersService
+    .getUserById(this.user_id)
+    .subscribe(
+        (data) => {
+        console.log(data)
+        if (!!data) {
+            this.deposit = +data.deposit
+            this.formatedDeposit =  this.deposit.toLocaleString('es-ES', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+            })
+            console.log(typeof data.deposit)
+            console.log(this.formatedDeposit)
+            this.fullname = data.fullname
+        }else{
+            console.log("User not found in dashboard")
         }
-        console.log("lol");
-    })
+        },
+        (error) => {
+        this.handleError(error);
+        }
+    );
 }
-openRegister() {
-    this.dialog.open(RegisterComponent);
+handleError(error: any) {
+    if (error.status === 500) {
+    }
+}
 }
 
-// logout() {
-//     sessionStorage.removeItem("user");
-//     this.login = false;
-//     this.router.navigate(['']);
-// }
-}
+

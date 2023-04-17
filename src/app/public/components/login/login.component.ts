@@ -52,7 +52,7 @@ login() {
             console.log("Logged Succesfully")
             this.emitterSpinner.emit(true)
             console.log("Before timeout")
-            setTimeout(this.navigateToDashboard, 1500, this.emitterLogin, this.emitterSpinner, this.router);    
+            setTimeout(this.navigateToTabla, 1500, this.emitterLogin, this.emitterSpinner, this.router);    
         }else{
             this.showError = true;
             console.log("User not found")
@@ -74,10 +74,10 @@ navigateToRegister(){
     this.emitterLogin.emit(false)
 }
 
-navigateToDashboard(emitterLogin: EventEmitter<boolean>, emitterSpinner: EventEmitter<boolean>, router: Router){  
+navigateToTabla(emitterLogin: EventEmitter<boolean>, emitterSpinner: EventEmitter<boolean>, router: Router){  
     emitterLogin.emit(false) 
     emitterSpinner.emit(false) 
-    router.navigate(['/dashboard'])
+    router.navigate(['/private'])
     console.log("Waiting...TimeOut")    
 }
 }

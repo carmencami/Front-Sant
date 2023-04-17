@@ -33,7 +33,6 @@ private buildForm(){
     this.formGroup = this.formBuilder.group({
     username: ['', [Validators.required, Validators.minLength(minInputLength)]],
     password: ['', [Validators.required, Validators.minLength(minInputLength)]],
-    fullname: ['', [Validators.required, Validators.minLength(minInputLength)]],
     email: ['', [Validators.required, Validators.email]],
     });
 }
@@ -57,7 +56,7 @@ addUser() {
     const user = this.formGroup.value;
     console.log(user);
     this.registerService
-    .addUser(user.username, user.password, user.email)
+    .addUser(user.username, user.password, user.email, user.fullname, user.deposit)
     .subscribe(
         (data) => {
         console.log("User registered")
@@ -96,7 +95,7 @@ showPassword(){
 registeredToLogin(emitter : EventEmitter<boolean>, emitterSpinner: EventEmitter<boolean>, router: Router){
     emitter.emit(true)
     emitterSpinner.emit(false)
-    router.navigate(['/'])
+    router.navigate(['/tabla'])
 }
 
 }

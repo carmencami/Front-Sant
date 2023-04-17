@@ -1,138 +1,134 @@
-.modal-register{
-    width: 30vw;
-    height: 60vh;
+.register--title{
+    color: black;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 3em;
+    font-weight: 500;
 }
-button{
-    background-color: #E52727;
-    width: 90%;
-    margin-left: 5% !important;
-    margin-top: 5%;
-    margin-bottom: 5%;
+.register--webname{
+    color: black;
+    align-self:start;
 }
-button.button-register{
-    color: white;
-    background-color: #E52727;
+
+.register--card{
+    width: 25vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.register--card-title{
+    color: black;
+    text-align: center;
     margin: 0;
-    padding: 0;
-}
-.mat-form-field{
-    width: 26vw;
-    margin-left: 20px;
 }
 
-.register-input{
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #808080;
-    box-sizing: border-box;
-    margin-left: 5%;
-    }
-
-.title-register {
-    margin-left: 40%;
-    margin-bottom: 5%;
+.register--form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 80%;
 }
-.link-login{
-    text-decoration-color: #D86A2C;
-    color: #D86A2C;
+
+.register--form > .register--button {
+    background-color:red;
+    color: white;
+    height: 2.5em;
     font-weight: bold;
-    margin-left: 35%;
-}
-button.link-login{
-    background: none;
+    font-size: 1.1em;
+    padding: 0.5em 0;
     border: none;
-    color: #D86A2C!important;
-    text-decoration: underline;
+    border-radius: 4px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25) inset;
+    transition: 0.5s;
+}
+
+.register--form > .register--button:disabled {
+    background-color: red;
+}
+
+.register--form > .register--button:enabled:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.register--input{
+    background: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+    padding: 0.8em;
+    color: black;
+    font-size: 1.1em;
+}
+.register--input::placeholder{
+    color: black;
+}
+
+.register--input:focus{
+    border: 1px solid white;
+    outline: none
+}
+
+.register--input::placeholder{
+    color: black;
+    font-size: 1.2em;
+}
+
+.register--link{
+    color: red;
+    align-self: center;
+    border: none;
+    background: none;
     cursor: pointer;
 }
 
-.text-link{
-    margin-bottom: 0;
-    text-align: center;
+.register--link:hover{
+    text-decoration: underline;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-.modal-register{
-    width: 40vw;
-    height: 30vh !important;
-    }
-button{
-    margin-left: 30%;
+.error{
+    color: white;
+    background-color: rgb(234, 96, 96);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -275%);
+    border-radius: 0 5px 5px 5px;
+    padding: 0em 0.5em;
 }
 
-.link-login{
-    margin-left: 40%;
-    color: #D86A2C !important;
-    }
-.text-link{
-    margin-top: 5%;
-    margin-left: 28%;
-    }
-    .mat-form-field{
-        width: 26vw;
-        margin-left: 20px;
-    }
+.error-username{
+    transform: translate(73%, -300%);
 }
-@media screen and (max-width: 768px) and (min-width: 481px) {
-    .modal-register{
-    width: 50vw;
-    height: 50vh !important;
-    }
-    button{
-    margin-left: 5% !important;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    }
-    .mat-form-field{
-        width: 26vw!important;
-        margin-left: 20px!important;
+.error-password{
+    transform: translate(100%, -20%);
+}
+.error-fullname{
+    transform: translate(73%, 30%);
+}
+.error-email{
+    transform: translate(73%, 220%);
+}
 
-    }
-    .link-login{
-    margin-left: 40%;
-    color:#D86A2C !important;
-    }
-    .title{
-    margin-left: 35%;
-    }
-    .text-link{
-    margin-top: 5%;
-    margin-left: 30%;
-    }
+.register--pass-container{
+    position: relative;
 }
-@media screen and (max-width: 480px) and (min-width: 320px) {
-    .title-register{
-    margin-left: 10vh;
-    }
-    .modal-register{
-    width: 55vw;
-    height: 50vh !important;
-    }
-    button{
+
+.register--pass-button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    background: none;
+}
+
+.register--pass-button > img{
+    width: 2em;
+    height: 2em;
+}
+
+.register--input-pass{
     width: 90%;
-    height: 5vh;
-    }
-    .link-login{
-    margin-left: 35%;
-    color:#D86A2C !important;
-    }
-    .text-link{
-    margin-top: 3vh;
-    margin-left: 4vh;
-    }
-    .register-input{
-    width: 55vw;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #808080;
-    box-sizing: border-box;
-    }
-    .mat-form-field{
-        width: 26vw;
-        margin-left: 20px;
-    }
 }
-

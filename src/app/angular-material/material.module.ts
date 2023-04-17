@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDividerModule } from '@angular/material/divider';
@@ -56,6 +56,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatNativeDateModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+  
     
   ],
   exports: [

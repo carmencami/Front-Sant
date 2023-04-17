@@ -1,4 +1,4 @@
-// export interface Login {
+// export interface Register {
 //     user_id: string;
 // }
 
