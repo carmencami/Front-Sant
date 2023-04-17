@@ -28,26 +28,24 @@
     transform: scale(1);
 }
 
-
 .button {
     font-size: larger;
     color:#737373;
     margin-bottom: 40px;
 }
-::ng-deep .mat-sort-header-content {
 
+::ng-deep .mat-sort-header-content {
 margin-left: 76px;
 text-align: left;
 align-items: center;
 font-weight: 500;
 font-size: 21px;
     
-    }
-
+}
 
 @media (max-width: 768px) {
     .cryptoimagen {
     display: none;
     }
 
-  }/*# sourceMappingURL=navbar.component.css.map */
+}

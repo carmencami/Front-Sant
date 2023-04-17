@@ -11,7 +11,7 @@ export class RegisterService{
     private registerUrl:string = "http://localhost:8532/api/users/add"
     constructor(private http:HttpClient){}
 
-    addUser(username : string, password : string, email: string, fullname:string, deposit:number) : Observable<UserInterface>{
+    addUser(username : string, password : string, email: string, fullname:string, _deposit:number) : Observable<UserInterface>{
         const body = {
             username : username,
             password : password,

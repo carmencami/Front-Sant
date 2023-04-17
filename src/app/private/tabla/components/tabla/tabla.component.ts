@@ -29,13 +29,13 @@ export class TablaComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private router: Router, private tablaService: TablaService) {}
+  constructor(private router: Router, private tablaService: TablaService ) {}
 
   selectedFilters: string = 'Popular';
 
   filtersForm = new FormControl('');
 
-  filters: string[] = ['Popular', 'Stablecoin', 'NFT', 'Metaverse'];
+  filters: string[] = ['Popular', 'Mayor', 'Menor', 'Metaverse'];
 
   ngOnInit(): void {
     this.tablaService.getAllCryptos().subscribe(

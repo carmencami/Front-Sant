@@ -7,12 +7,10 @@ const routes: Routes = [
         loadChildren: () =>
         import('../private/tabla/tabla.module').then((m) => m.TablaModule),
     },
-    
-
 
 //   {
-//     path: 'messages',
-//     loadChildren: () => import('./chat/chat.module').then((m) => m.ChatModule),
+//     path: 'shared',
+//     loadChildren: () => import('./shared/shared.module').then((m) => m.SharedModule),
 //   },
 ];
 
