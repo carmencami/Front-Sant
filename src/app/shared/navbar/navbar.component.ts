@@ -11,7 +11,7 @@ styleUrls: ['./navbar.component.scss'],
 export class NavbarComponent implements OnInit {
 user_id:any
 fullname:string = ""
-deposit:number = 0
+deposit:number = 1000
 formatedDeposit:any
 
 
