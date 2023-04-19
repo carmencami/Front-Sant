@@ -15,7 +15,7 @@ deposit:number = 1000
 formatedDeposit:any
 
 
-constructor(public dialog: MatDialog, public router: Router,  private usersService:UsersService) {}
+constructor(public dialog: MatDialog, public router: Router,  public usersService:UsersService) {}
 
 ngOnInit(): void {
     this.user_id = sessionStorage.getItem('user_id')

@@ -43,5 +43,12 @@ export class UsersService {
         console.log(this.updateUserUrl, body)     
         return this.http.put<UserInterface>(this.updateUserUrl, body);
     }
+    getCryptosByUserId(user_id: string): Observable<UserInterface> {
+        console.log('Id send:')
+        console.log(user_id)
+        console.log('Url send:')
+        console.log(`${this.getUrl}${user_id}`)
+        return this.http.get<UserInterface>(`${this.getUrl}`+ JSON.parse(user_id));
+    }
 
 }

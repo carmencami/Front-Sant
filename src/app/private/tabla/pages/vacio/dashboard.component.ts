@@ -1,17 +1,17 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-// @Component({
-//   selector: 'app-dashboard',
-//   templateUrl: './dashboard.component.html',
-//   styleUrls: ['./dashboard.component.scss']
-// })
-// export class DashboardComponent implements OnInit {
+@Component({
+selector: 'app-dashboard',
+templateUrl: './dashboard.component.html',
+styleUrls: ['./dashboard.component.scss']
+})
+export class DashboardComponent implements OnInit {
 
-//   showFiller = false;
-  
-//   constructor() { }
+showFiller = false;
 
-//   ngOnInit(): void {
-//   }
+constructor() { }
 
-// }
+ngOnInit(): void {
+}
+
+}

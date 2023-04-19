@@ -20,6 +20,8 @@ export class TablaComponent implements OnInit {
     'asset',
     'value',
     'stock',
+    
+
   ];
   dataSource!: MatTableDataSource<TablaInterface>;
   list!: TablaInterface[];
@@ -66,4 +68,6 @@ export class TablaComponent implements OnInit {
     if (error.status === 500) {
     }
   }
+
+  
 }
