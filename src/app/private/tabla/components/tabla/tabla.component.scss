@@ -9,6 +9,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20%;
+}
+.search{
+    color:#78a6d1;
+    font-size:large;
+}
+.mat-caption-search{
+    color: #78a6d1;
 }
 container {
     display: grid;
@@ -49,6 +57,10 @@ container {
 .search {
     justify-self: center;
     width: 40%;
+}
+.mat-caption{
+color:#78a6d1;
+font-size: x-large;
 }
 
 .table--container{

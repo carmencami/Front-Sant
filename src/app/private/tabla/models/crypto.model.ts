@@ -4,5 +4,4 @@ export interface CryptoInterface {
     icon: string,
     asset:string,
     stock: number,
-
 }

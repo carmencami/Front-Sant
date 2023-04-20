@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CryptoInterface } from '../../models/crypto.model';
 import { CryptoService } from '../../services/crypto.service';
+// import { ModalBuyComponent } from '../modalbuy/modalbuy.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -20,6 +21,8 @@ export class TablaComponent implements OnInit {
     'asset',
     'value',
     'stock',
+    // 'actions',
+    
     
 
   ];
@@ -30,6 +33,8 @@ export class TablaComponent implements OnInit {
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort!: MatSort;
+  dialog: any;
+  // dialog: any;
 
   constructor(private router: Router, private tablaService: CryptoService ) {}
 
@@ -68,6 +73,9 @@ export class TablaComponent implements OnInit {
     if (error.status === 500) {
     }
   }
+  // openDialog(row:any) {
+  //   this.dialog.open(ModalBuyComponent);
+  // }
 
   
 }

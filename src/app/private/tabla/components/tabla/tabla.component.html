@@ -23,7 +23,7 @@
     </mat-form-field>
 
     <mat-form-field class="search">
-      <mat-label class="mat-caption">Search</mat-label>
+      <mat-label class="mat-caption-search">Search</mat-label>
       <input
         matInput
         (keyup)="applyFilter($event)"
@@ -103,18 +103,16 @@
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="buysell">
+        <ng-container matColumnDef="buy">
           <th
             mat-header-cell
             *matHeaderCellDef
             mat-sort-header
             class="column--buysell"
           >
-            Buy 
+            <button>BUY</button>
           </th>
           <td mat-cell *matCellDef="let row">
-            <mat-icon class="button--buy">add_circle_outline</mat-icon>
-            <mat-icon class="button--sell">remove_circle_outline</mat-icon>
           </td>
         </ng-container>
 
