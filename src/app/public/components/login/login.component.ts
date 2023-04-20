@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { Login } from '../../models/login.model';
 import { Router } from '@angular/router';
+import { DataUserInterface } from 'src/app/private/tabla/models/dataUser.model';
 
 @Component({
 selector: 'app-login',
@@ -28,7 +30,7 @@ private buildForm(){
     const minInputLength = 4;
     
     this.formGroup = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.minLength(minInputLength)]],
+    username: ['', [Validators.required, Validators.minLength(minInputLength)]],
     password: ['', [Validators.required, Validators.minLength(minInputLength)]]
     });
 }
@@ -37,19 +39,16 @@ login() {
     const user = this.formGroup.value;
     console.log(user);
     this.loginService
-    .login(user.email, user.password)
+    .login(user.username, user.password)
     .subscribe(
         (data) => {
         if (!!data) {
-            sessionStorage.setItem('user_id', JSON.stringify(data.user_id));
-            sessionStorage.setItem('username', JSON.stringify(data.username));
-            sessionStorage.setItem('email', JSON.stringify(data.email));
-            sessionStorage.setItem('password', JSON.stringify(data.password));
-            console.log('################################')
-            console.log(sessionStorage.getItem('password'))
-            sessionStorage.setItem('fullname', JSON.stringify(data.fullname));
-            sessionStorage.setItem('deposit', JSON.stringify(data.deposit));
-            console.log("Logged Succesfully")
+            const userData : DataUserInterface = {
+                userToken: data.userToken , fullname: data.fullname, balance: data.balance
+            }
+            localStorage.setItem(
+                "userlogin",JSON.stringify(userData)
+            )
             this.emitterSpinner.emit(true)
             console.log("Before timeout")
             setTimeout(this.navigateToTabla, 1500, this.emitterLogin, this.emitterSpinner, this.router);    

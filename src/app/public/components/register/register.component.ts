@@ -95,7 +95,7 @@ showPassword(){
 registeredToLogin(emitter : EventEmitter<boolean>, emitterSpinner: EventEmitter<boolean>, router: Router){
     emitter.emit(true)
     emitterSpinner.emit(false)
-    router.navigate(['/tabla'])
+    router.navigate(['/private'])
 }
 
 }

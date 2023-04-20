@@ -4,8 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TablaInterface } from '../../models/tabla.model';
-import { TablaService } from '../../services/tabla.service';
+import { CryptoInterface } from '../../models/crypto.model';
+import { CryptoService } from '../../services/crypto.service';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -23,15 +23,15 @@ export class TablaComponent implements OnInit {
     
 
   ];
-  dataSource!: MatTableDataSource<TablaInterface>;
-  list!: TablaInterface[];
+  dataSource!: MatTableDataSource<CryptoInterface>;
+  list!: CryptoInterface[];
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private router: Router, private tablaService: TablaService ) {}
+  constructor(private router: Router, private tablaService: CryptoService ) {}
 
   selectedFilters: string = 'Popular';
 
@@ -44,7 +44,7 @@ export class TablaComponent implements OnInit {
       (data) => {
         console.log(data);
         this.list = data;
-        this.dataSource = new MatTableDataSource<TablaInterface>(this.list);
+        this.dataSource = new MatTableDataSource<CryptoInterface>(this.list);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },

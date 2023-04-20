@@ -21,7 +21,7 @@ ngOnInit(): void {
     this.user_id = sessionStorage.getItem('user_id')
     
     this.usersService
-    .getUserById(this.user_id)
+    .updateBalance(this.user_id, this.deposit)
     .subscribe(
         (data) => {
         console.log(data)
@@ -42,6 +42,20 @@ ngOnInit(): void {
         this.handleError(error);
         }
     );
+}
+getUserData(){
+    return JSON.parse( localStorage.getItem("userlogin")!)
+} 
+login() {
+    let logguer = false
+    if (localStorage.getItem('userlogin')){
+        logguer=true
+    }
+    return logguer
+}
+logout() {
+    localStorage.removeItem("userlogin");
+    this.router.navigate(['/']);
 }
 handleError(error: any) {
     if (error.status === 500) {

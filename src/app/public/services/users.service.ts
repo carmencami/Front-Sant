@@ -24,20 +24,13 @@ export class UsersService {
 
 
 
-    updateUser(user_id: any, username: any, fullname: any, password: any, email: any, deposit: any) : Observable<UserInterface>{
+    updateBalance(user_id: any, deposit: any) : Observable<UserInterface>{
         console.log('Info send:')
         console.log(user_id)
-        console.log(username)
-        console.log(fullname)
-        console.log(password)
         console.log("URL send:")
         
         const body = {
             user_id: JSON.parse(user_id),
-            username : JSON.parse(username),
-            fullname : JSON.parse(fullname),
-            password : JSON.parse(password),
-            email : JSON.parse(email),
             deposit : deposit
         }   
         console.log(this.updateUserUrl, body)     
